@@ -18,8 +18,7 @@ function beyond (num) {
 }
 
 function decode (input) {
-    // input = input.split("");
-    input = input.split('craft block argon meter bells brown croon droop');
+    input = input.split(" ");
     let answer = '';
 
     for (let i = 0; i < input.length; i++) { 
@@ -34,11 +33,10 @@ function decode (input) {
         } else { answer = answer + ' '; 
     } 
 } 
-console.log(answer)
-
 return answer; 
-
 }
+
+console.log(decode('craft block argon meter bells brown croon droop'));
 // console.log(decode('craft block argon meter bells brown croon droop'))
 
 // 'craft block argon meter bells brown croon droop'.
