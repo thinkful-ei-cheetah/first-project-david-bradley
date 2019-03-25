@@ -48,42 +48,57 @@ console.log(decode('craft block argon meter bells brown croon droop'));
 // d	            5
 
 
-function howManyDays (month, leapYear) {
-    if (month = 'January') {
-        let numberOfDays = 31
-    } else if (month == 'March') {
-        let numberOfDays = 31
-    } else if (month == 'April') {
-        let numberOfDays = 30
-    } else if (month == 'May') {
-        let numberOfDays = 31
-    } else if (month == 'June') {
-        let numberOfDays = 30
-    } else if (month == 'July') {
-        let numberOfDays = 31
-    } else if (month == 'August') {
-        let numberOfDays = 31
-    } else if (month == 'September') {
-        let numberOfDays = 30
-    } else if (month == 'October') {
-        let numberOfDays = 31
-    } else if (month == 'November') {
-        let numberOfDays = 30
-    } else if (month == 'December') {
-        let numberOfDays = 31
-    } else if (month == 'February') {
-        if (year % 400 == 0) {
-            let numberOfDays = 29
-        } else if (year % 100 == 0) {
-            let numberOfDays = 28
-        } else if (year % 4 == 0) {
-            let numberOfDays = 29
-        } else {
-            let numberOfDays = 28
-        }
-    } else {
-        return 'Must provide a valid month.'
+function howManyDays (month, leapYear = false) {
+    
+    
+
+
+
+    // return month === "January" || month === "March" || month === "May" || month === "July" || month === "August" || month === "October" || month === "December" ? `${month} has 31 days` : month === "April" || month === "June" || month === "September" || month === "November" ? `${month} has 30 days` : leapYear ? `${month} has 29 days` : `${month} has 28 days`;
+
+
+
+
+
+    // if (month === "January" || month === "March" || month === "May" || month === "July" || month === "August" || month === "October" || month === "December") {
+    //     return `${month} has 31 days`;
+    // }
+
+    // if (month === "April" || month === "June" || month === "September" || month === "November") {
+    //     return `${month} has 30 days`;
+    // }
+
+    // if (month === "February") {
+    //     if (leapYear === true) {
+    //         return `${month} has 29 days`;
+    //     }
+    //     return `${month} has 28 days`;
+    // }
+
+    // else {
+    //     return 'Please enter a valid month';
+    // }
+
+
+
+    let result;
+    switch(month) {
+        case "January":
+        case "March":
+        case "May":
+        case "July":
+        case "August":
+        case "October":
+        case "December":
+            result = `${month} has 31 days`;
+            break;
+        case "February":
+            result = `${month} has ${leapYear ? 29 : 28} days`;
+            break;
+        default:
+            result = `${month} has 30 days`;
+            break;
     }
-    return `${month} has ${numberOfDays} days.`
+    return result;
 }
-console.log (howManyDays(January, 2018))
+console.log (howManyDays("February", true))
