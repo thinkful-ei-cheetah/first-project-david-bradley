@@ -102,3 +102,21 @@ function howManyDays (month, leapYear = false) {
     return result;
 }
 console.log (howManyDays("February", true))
+
+
+function rps(int){
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+    if (int === 1 && randomNo === 3 || int === 2 && randomNo === 1 || int === 3 && randomNo === 2){
+        return 'Player has won!';
+    }
+    if (int === 3 && randomNo === 1 || int === 1 && randomNo === 2 || int === 2 && randomNo === 3) {
+        return 'Computer has won!';
+    }
+    if (int === 1 && randomNo === 1 || int === 2 && randomNo === 2 || int === 3 && randomNo === 3) {
+        return 'Draw!';
+    }
+    else {
+        throw new TypeError('Must enter either a 1, 2, or 3!')
+    }
+}
+console.log(rps(1))
